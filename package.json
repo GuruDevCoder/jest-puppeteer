@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "lerna run build",
+    "ci": "yarn build && yarn lint && yarn test --ci",
+    "dev": "lerna run build --parallel -- --watch",
+    "format": "prettier --write \"packages/**/*.{js,json,md}\" \"*.{js,json,md}\"",
+    "lint": "eslint .",
+    "release": "lerna publish --conventional-commits && conventional-github-releaser --preset angular",
+    "test": "jest --runInBand"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.6",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "conventional-github-releaser": "^3.1.2",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "express": "^4.16.3",
+    "jest": "^23.5.0",
+    "lerna": "^3.0.6",
+    "prettier": "^1.14.2",
+    "puppeteer": "^1.7.0"
+  },
+  "dependencies": {}
+}
